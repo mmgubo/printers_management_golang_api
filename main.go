@@ -115,7 +115,7 @@ func deletePrinter(w http.ResponseWriter, r *http.Request) {
             // article
             Printers = append(Printers[:index], Printers[index+1:]...)
         }
-    }
+    }}
 
     func createDynamoDBClient() *dynamodb.DynamoDB{
         //Creates a new Session by using .aws/credentials and .aws/config
@@ -133,4 +133,3 @@ func deletePrinter(w http.ResponseWriter, r *http.Request) {
     }
 
 
-}
