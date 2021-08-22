@@ -33,11 +33,11 @@ func NewPrinterService(repository repository.PrinterRepository) PrinterService {
 
 func (*service) Validate(printer *entity.Printer) error {
 	if printer == nil {
-		err := errors.New("The post is empty")
+		err := errors.New("The printer is empty")
 		return err
 	}
 	if printer.Name == "" {
-		err := errors.New("The post title is empty")
+		err := errors.New("The printer name is empty")
 		return err
 	}
 	return nil

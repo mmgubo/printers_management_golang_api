@@ -38,7 +38,7 @@ func (*controller) GetPrinters(response http.ResponseWriter, request *http.Reque
 	response.Header().Set("Content-Type", "application/json")
 	posts, err := printerService.FindAll()
 	if err != nil {
-		response.WriteHeader(http.StatusInternalServerError)
+		response.WriteHeader(http.StatusNotFound)
 		json.NewEncoder(response).Encode(errors.ServiceError{Message: "Error getting the printer"})
 		return
 	}

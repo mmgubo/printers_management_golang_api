@@ -46,8 +46,6 @@ func main() {
 	// httpRouter.GET("/printers/{id}", printerController.GetPrinterByID)
 	// httpRouter.POST("/printers", printerController.AddPrinter)
 
-    //httpRouter.SERVE(os.Getenv("PORT"))
-
      myRouter := mux.NewRouter().StrictSlash(true)
 
      myRouter.HandleFunc("/", homePage)
@@ -58,7 +56,7 @@ func main() {
      myRouter.HandleFunc("/printers/{id}", printerController.GetPrinterByID).Methods("GET")
 
 
-    log.Fatal(http.ListenAndServe(":4200", myRouter))
+    log.Fatal(http.ListenAndServe(":4208", myRouter))
 
     // Printers = []Printer{
     // Printer{Id: "1", Name: "Xerox printer", Number: "192.168.280", Status: "Active"},
