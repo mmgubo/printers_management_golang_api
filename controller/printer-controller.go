@@ -28,9 +28,9 @@ type PrinterController interface {
 	DeletePrinter(response http.ResponseWriter, request *http.Request)
 }
 
-func NewPostController(service service.PrinterService) PrinterController {
+func NewPrinterController(service service.PrinterService, cache cache.PrinterCache) PrinterController {
 	printerService = service
-	
+	printerCache = cache
 	return &controller{}
 }
 
@@ -39,7 +39,7 @@ func (*controller) GetPrinters(response http.ResponseWriter, request *http.Reque
 	posts, err := printerService.FindAll()
 	if err != nil {
 		response.WriteHeader(http.StatusInternalServerError)
-		json.NewEncoder(response).Encode(errors.ServiceError{Message: "Error getting the posts"})
+		json.NewEncoder(response).Encode(errors.ServiceError{Message: "Error getting the printer"})
 		return
 	}
 	response.WriteHeader(http.StatusOK)

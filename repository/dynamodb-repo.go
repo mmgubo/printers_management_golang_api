@@ -108,9 +108,9 @@ func (repo *dynamoDBRepo) FindByID(id string) (*entity.Printer, error) {
 
 
 
-// Delete: TODO
-func (repo *dynamoDBRepo) Delete(printer *entity.Printer) error {
-	return nil
-}
+// // Delete: TODO
+// func (repo *dynamoDBRepo) Delete(printer *entity.Printer) error {
+// 	return nil
+// }
 
 

@@ -1,6 +1,6 @@
 package cache
 
-import "printer_api/entity"
+import "mfundo.com/printers/entity"
 
 
 type PrinterCache interface {
